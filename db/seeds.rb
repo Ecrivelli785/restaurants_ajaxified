@@ -14,4 +14,24 @@ Restaurant.create!({
   name: "Neuf et Voisins",
   address: "Van Arteveldestraat 1, 1000 Brussels, Belgium"
 })
+Restaurant.create!({
+  name: "Panchito",
+  address: "Van Arteveldestraat 1, 1000 Brussels, Belgium"
+})
+Restaurant.create!({
+  name: "MAKLUKAS 1",
+  address: "Van Arteveldestraat 1, 1000 Brussels, Belgium"
+})
+Restaurant.create!({
+  name: "MAKLUKAS 2",
+  address: "Van Arteveldestraat 1, 1000 Brussels, Belgium"
+})
+Restaurant.create!({
+  name: "Neuf et Voisins",
+  address: "Van Arteveldestraat 1, 1000 Brussels, Belgium"
+})
+Restaurant.create!({
+  name: "Neuf et Voisins",
+  address: "Van Arteveldestraat 1, 1000 Brussels, Belgium"
+})
 puts 'Finished!'

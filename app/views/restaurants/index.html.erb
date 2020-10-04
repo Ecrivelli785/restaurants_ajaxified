@@ -1,8 +1,41 @@
 <!-- app/views/restaurants/index.html.erb -->
-<h1>Restaurants</h1>
+<h1 class="flex-center mt-5">Restaurants</h1>
 
-<ul>
+<table class="table table-striped  m-2 mt-5">
+  <thead>
+    <tr>
+      <th>Restaurante Name</th>
+      <th>Restaurante Adress</th>
+    </tr>
+  </thead>
+
+
+<div>
+   <tbody id="TablaOrdenesTrabajos">
   <% @restaurants.each do |restaurant| %>
-    <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
-  <% end %>
-</ul>
+      <%= simple_form_for (restaurant), remote: true do |f| %>
+    <tr data-controller="restaurant" data-restaurant-update-url="<%= restaurant_path(restaurant) %>">
+      <td><%= restaurant.name %></td>
+      <td data-target="restaurant.save"><%= restaurant.address %></td>
+      <td>   <%= f.input :name  %> </td>
+      <td data-action="restaurant#toggle" data-target="restaurant.categoria"><%= f.input :categoria, as: :radio_buttons, collection: Restaurant::CATEGORIA, wrapper: :vertical_collection_inline%></td>
+      <td><%= button_to "Delete", restaurant, method: :delete, remote: true %></td>
+      <% end %>
+    </tr>
+<% end %>
+</tbody>
+
+</div>
+
+
+
+
+
+
+
+<!-- app/views/pages/home.html.erb -->
+<div class="flex-center mt-4" data-controller="counter">
+  <div class="">
+    <span data-target="counter.count"><%= @restaurant_count %></span>
+  </div>
+</div>
