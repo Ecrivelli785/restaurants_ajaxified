@@ -28,6 +28,8 @@ def update
   @restaurant.update restaurant_params
   @restaurant.save
   respond_to do |format|
+    format.html
+    format.json
     format.js
   end
 end
